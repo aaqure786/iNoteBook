@@ -11,6 +11,7 @@ function App() {
     <NoteState>
       <Router>
         <NavBar />
+        <div className="container">
         <Routes>
 
           <Route exact path='/' element={<Home />} ></Route>
@@ -18,6 +19,7 @@ function App() {
           <Route exact path='/contact' element={<Contact />} ></Route>
 
         </Routes>
+        </div>
       </Router>
     </NoteState>
 
