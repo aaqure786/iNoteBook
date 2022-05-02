@@ -13,7 +13,52 @@ const NoteState = (props) => {
           "tag": "General",
           "date": "2022-04-18T20:18:19.714Z",
           "__v": 0
-        }
+        },
+        {
+          "_id": "625dc78b0a86ab69bdbead27",
+          "user": "625c6fdab3fa1c4818494977",
+          "title": "This is my Second note",
+          "description": "This is a notes app which keep the record of your data",
+          "tag": "General",
+          "date": "2022-04-18T20:18:19.714Z",
+          "__v": 0
+        },
+        {
+          "_id": "625dc78b0a86ab69bdbead27",
+          "user": "625c6fdab3fa1c4818494977",
+          "title": "This is my Second note",
+          "description": "This is a notes app which keep the record of your data",
+          "tag": "General",
+          "date": "2022-04-18T20:18:19.714Z",
+          "__v": 0
+        },
+        {
+          "_id": "625dc78b0a86ab69bdbead27",
+          "user": "625c6fdab3fa1c4818494977",
+          "title": "This is my Second note",
+          "description": "This is a notes app which keep the record of your data",
+          "tag": "General",
+          "date": "2022-04-18T20:18:19.714Z",
+          "__v": 0
+        },
+        {
+          "_id": "625dc78b0a86ab69bdbead27",
+          "user": "625c6fdab3fa1c4818494977",
+          "title": "This is my Second note",
+          "description": "This is a notes app which keep the record of your data",
+          "tag": "General",
+          "date": "2022-04-18T20:18:19.714Z",
+          "__v": 0
+        },
+        {
+          "_id": "625dc78b0a86ab69bdbead27",
+          "user": "625c6fdab3fa1c4818494977",
+          "title": "This is my Second note",
+          "description": "This is a notes app which keep the record of your data",
+          "tag": "General",
+          "date": "2022-04-18T20:18:19.714Z",
+          "__v": 0
+        },
       ]
 
       const [notes,setNotes] = useState(initialnotes);
