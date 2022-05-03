@@ -6,6 +6,7 @@ import Contact from "./components/Contact";
 import NoteState from "./context/notes/NoteState";
 
 
+
 function App() {
   return (
     <NoteState>

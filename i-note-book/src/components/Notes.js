@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import noteContext from '../context/notes/noteContext';
 import NoteItems from './NoteItems';
 
+
 const Notes = () => {
     const context = useContext(noteContext);
     const { notes, setNotes } = context;
