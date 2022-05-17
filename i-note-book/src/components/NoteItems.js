@@ -7,12 +7,12 @@ const NoteItems = (props) => {
     const context = useContext(noteContext);
     
       const { deleteNotes } = context;
-    const notify = () => toast.info("Ready to Edit",{autoClose: 2000});
+    
     const deleteHandle = () => {
         deleteNotes(note._id) && 
-        toast.success("Item deleted",{autoClose: 3000});
+        toast.success("Item deleted",{autoClose: 1000});
     }
-    const { note } = props;
+    const { note, updateNote } = props;
     
     return (
         <div className='col-md-3'>
@@ -22,7 +22,7 @@ const NoteItems = (props) => {
                     
                     <p className="card-text">{note.description}</p>
                     <i className="fa-solid fa-trash-can mx-3" onClick={deleteHandle}></i>
-                    <i className="fa-solid fa-pen-to-square mx-3" onClick={notify}></i>
+                    <i className="fa-solid fa-pen-to-square mx-3" onClick={()=>{updateNote(note)}}></i>
                     
                 </div>
             </div>
