@@ -10,7 +10,7 @@ const NoteItems = (props) => {
     
     const deleteHandle = () => {
         deleteNotes(note._id) && 
-        toast.success("Item deleted",{autoClose: 1000});
+        toast.success("Item deleted",{autoClose: 500});
     }
     const { note, updateNote } = props;
     

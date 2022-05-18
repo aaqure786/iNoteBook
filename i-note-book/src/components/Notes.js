@@ -1,27 +1,36 @@
 import React, { useContext, useEffect, useRef,useState } from 'react'
 import noteContext from '../context/notes/noteContext';
+import 'react-toastify/dist/ReactToastify.css';
+import {  toast } from 'react-toastify';
 import AddNotes from './AddNotes';
 import NoteItems from './NoteItems';
 
 
 const Notes = () => {
     const context = useContext(noteContext);
-    const { notes, getNotes } = context;
+    const { notes, getNotes ,editNotes} = context;
+    const [note, setNote] = useState({id: "", etitle: "", edescription: "", etag: ""})
+    const ref = useRef(null)
+    const refClose = useRef(null)
+
     useEffect(() => {
         getNotes();
         // eslint-disable-next-line
     }, [])
     
-    const [note, setNote] = useState({id: "", etitle: "", edescription: "", etag: ""})
-
+   
     const updatenote = (currentNote) => {
         ref.current.click()
         setNote({id: currentNote._id, etitle: currentNote.title, edescription: currentNote.description, etag:currentNote.tag})
   
     }
-    const ref = useRef(null)
+    
     const handleClick = (e) => {
-        e.preventDefault();
+        
+        editNotes(note.id, note.etitle,note.etag,note.edescription)
+        toast.success("Note Updated",{autoClose: 500});
+        refClose.current.click()
+        
        
       }
       const onChange = (e) => {
@@ -62,7 +71,7 @@ const Notes = () => {
                             </form>
                         </div>
                         <div className="modal-footer">
-                            <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button ref={refClose} type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                             <button type="button" className="btn btn-primary" onClick={handleClick}>Update Note</button>
                         </div>
                     </div>
