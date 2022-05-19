@@ -19,7 +19,7 @@ export default function NavBar() {
                                 <Link className={`nav-link ${location.pathname==="/"? "active": ""}`} aria-current="page" to="/">Home</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className={`nav-link ${location.pathname==="/about"? "active": ""}`}to="/about">About</Link>
+                                <Link className={`nav-link ${location.pathname==="/about"? "active": ""}`} to="/about">About</Link>
                             </li>
                             <li className="nav-item">
                                 <Link className={`nav-link ${location.pathname==="/contact"? "active": ""}`} to="/contact">Contact</Link>
@@ -29,6 +29,10 @@ export default function NavBar() {
                             
                         </ul>
                         
+                        <form className='d-flex'>
+                                <Link className="btn btn-primary mx-2" to="/signup" role="button">SignUp</Link>
+                                <Link className="btn btn-primary mx-2" to="/login" role="button">LogIn</Link>
+                            </form>
                     </div>
                 </div>
             </nav>
