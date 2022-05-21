@@ -4,6 +4,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import {  toast } from 'react-toastify';
 import AddNotes from './AddNotes';
 import NoteItems from './NoteItems';
+import { useNavigate } from 'react-router-dom';
 
 
 const Notes = () => {
@@ -12,9 +13,14 @@ const Notes = () => {
     const [note, setNote] = useState({id: "", etitle: "", edescription: "", etag: ""})
     const ref = useRef(null)
     const refClose = useRef(null)
-
+    let history = useNavigate();
     useEffect(() => {
-        getNotes();
+        if(localStorage.getItem('token')){
+            getNotes();
+        }
+        else{
+            history('/login')
+        }
         // eslint-disable-next-line
     }, [])
     

@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import { useNavigate} from 'react-router-dom'
+import 'react-toastify/dist/ReactToastify.css';
+import {  toast } from 'react-toastify';
 
 const Loigin = () => {
     const [credentials, setCredentials] = useState({email: "", password: ""})
@@ -22,10 +24,12 @@ let history = useNavigate();
       if(json.success){
           // Save the auth token and redirect
           localStorage.setItem('token', json.authToken)
+          toast.success("Login Suceesfuly",{autoClose: 300});
           history('/')
       }
       else{
-          alert('Invalid credentials')
+        history('/login')
+        toast.error("Invalid Credentials",{autoClose: 300});
       }
 
   }
